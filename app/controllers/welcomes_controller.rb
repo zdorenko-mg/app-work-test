@@ -15,7 +15,7 @@ class WelcomesController < ApplicationController
     @stats = Stat.where(welcome_id: @welcome)
 
     @welcome = Welcome.find(params[:id])
-    @search_ids = Impression.where(impressionable_id: @welcome)
+    @search_ids = Impression.where(impressionable_id: @welcome).order("updated_at desc")
     #@search_ips = Impression.find(params[:id])
     #@show_ips = Impression.where(ip_address: @search_ids )
     impressionist(@welcome, "message...") # 2nd argument is optional
