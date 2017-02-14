@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ip</th>
+      <th>Country</th>
+      <th>Country code</th>
+      <th>Region</th>
+      <th>Region code</th>
+      <th>City</th>
+      <th>Zip code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stats.each do |stat| %>
+      <tr>
+        <td><%= stat.ip %></td>
+        <td><%= stat.country %></td>
+        <td><%= stat.country_code %></td>
+        <td><%= stat.region %></td>
+        <td><%= stat.region_code %></td>
+        <td><%= stat.city %></td>
+        <td><%= stat.zip_code %></td>
+        <td><%= link_to 'Show', stat %></td>
+        <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
+        <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stat', new_stat_path %>

@@ -1,0 +1,48 @@
+<%= link_to 'Edit', edit_welcome_path(@welcome) %> |
+<%= link_to 'Back', welcomes_path %>
+
+<%= @welcome.impressionist_count(:filter=>:ip_address) %>
+
+<h1>Static link</h1>
+<p>
+  <strong>Link:</strong>
+  <%= @welcome.link %>
+</p>
+
+<p>
+  <strong>Short link:</strong>
+  <%= @welcome.short_link %>
+</p>
+
+<h2>Your options</h2>
+
+<table id="GeoResults"></table>
+<script>
+$.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+    var table_body = "";
+    $.each(data, function(k, v) {
+        table_body += "<tr><td>" + k + "</td><td><b>" + v + "</b></td></tr>";
+    });
+    $("#GeoResults").html(table_body);
+});
+</script>
+
+<h3>Lists ip address</h3>
+
+<% @search_ids.each do |search| %>
+	<table>
+		<tr>
+			<td>id</td>
+			<td>ip</td>
+		</tr>
+		<tr>
+			<td><%= search.id %></td>
+			<td><%= request.remote_ip %></td>
+		</tr>
+	</table>
+<% end %>
+
+
+
+
+

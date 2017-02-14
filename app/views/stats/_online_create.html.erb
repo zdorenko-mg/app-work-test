@@ -1,0 +1,23 @@
+<%= form_for(@stat) do |f| %>
+  <div class="">
+    <%= f.text_field (:status, "#{GeoResults.status}") %>
+    <%= f.text_field :country %>
+    <%= f.text_field :countryCode %>
+    <%= f.text_field :region %>
+    <%= f.text_field :regionName %>
+    <%= f.text_field :city %>
+    <%= f.text_field :zip %>
+    <%= f.text_field :latitude %>
+    <%= f.text_field :longitude %>
+    <%= f.text_field :country %>
+    <%= f.text_field :timezone %>
+    <%= f.text_field :isp %>
+    <%= f.text_field :org %>
+    <%= f.text_field :as %>
+    <%= f.text_field :query %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

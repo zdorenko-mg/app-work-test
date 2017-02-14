@@ -1,0 +1,45 @@
+<%= form_for(stat) do |f| %>
+  <div class="field">
+    <%= f.label :ip %>
+    <%= f.text_field :ip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country_code %>
+    <%= f.text_field :country_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region %>
+    <%= f.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region_code %>
+    <%= f.text_field :region_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip_code %>
+    <%= f.text_field :zip_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :welcome_id %>
+    <%= f.collection_select :welcome_id, Welcome.all, :id, :link, :include_blank => "Select" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

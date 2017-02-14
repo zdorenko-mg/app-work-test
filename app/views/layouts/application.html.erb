@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AppForUpwork</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+  <nav style="padding: 20px; background-color: #c0c0c0;">
+  	<%= link_to "Home", welcomes_path %> -
+  	<%= link_to "Stats", stats_path %>
+  </nav>
+    <%= yield %>
+  </body>
+</html>
