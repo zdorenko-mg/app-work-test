@@ -27,7 +27,7 @@ $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
 });
 </script>
 
-<h3>Lists ip address</h3>
+<h3>Lists ip address - How many different ip <%= @welcome.impressionist_count(:filter=>:ip_address) %></h3>
 
 <% @search_ids.each do |search| %>
 	<table>
